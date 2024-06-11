@@ -10,36 +10,57 @@ namespace ProductMicroservice.Controllers
     public class ProductController : ControllerBase
     {
         private readonly IProductService _productService;
+        private const string GetAsyncName = "Get product by Id";
         public ProductController(IProductService productService)
         {
             _productService = productService;
         }
-        [HttpGet]
-        public IEnumerable<Product> ProductList()
+        [HttpGet()]
+        public async Task<IActionResult> FindAsync()
         {
-            var productList = _productService.FindProducts();
-            return productList;
+            var result = await _productService.FindAsync();
+            return Ok(result);
 
         }
-        [HttpGet("{id}")]
-        public Product GetProductById(string id)
+        [HttpGet("{id}", Name = GetAsyncName)]
+        public async Task<IActionResult> GetAsync(Guid id)
         {
-            return _productService.GetProduct(id);
+            var result = await _productService.GetAsync(id);
+            if(result is null)
+            {
+                return NotFound();
+            }
+            return Ok(result);
         }
         [HttpPost]
-        public Product AddProduct(Product product)
+        public async Task<IActionResult> SaveAsync([FromBody]ProductPostDto productPostDto)
         {
-            return _productService.AddProduct(product);
+            var result = await _productService.SaveAsync(productPostDto);
+            if(result is null)
+            {
+                return Conflict();
+            }
+            return CreatedAtRoute(GetAsyncName, new {result?.Id}, result);
         }
-        [HttpPut]
-        public Product UpdateProduct(Product product)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateAsync(Guid id, [FromBody]ProductPutDto productPutDto)
         {
-            return _productService.UpdateProduct(product);
+            var result = await _productService.UpdateAsync(id, productPutDto);
+            if(result is null)
+            {
+                return Conflict();
+            }
+            return Ok(result);
         }
         [HttpDelete("{id}")]
-        public bool DeleteProduct(string id)
+        public async Task<IActionResult> DeleteAsync(Guid id)
         {
-            return _productService.DeleteProduct(id);
+            var deleteSuccessfull = await _productService.DeleteAsync(id);
+            if(!deleteSuccessfull)
+            {
+                return Conflict();
+            }
+            return Ok(deleteSuccessfull);
         }
     }
 }

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "jMD4ViBmsw8=",
+  "dgSpecHash": "avBj/weYybE=",
   "success": true,
   "projectFilePath": "/Users/mateicoman/Repos/MicroserviceProject/UserMicroservice/UserMicroservice.csproj",
   "expectedPackageFiles": [
+    "/Users/mateicoman/.nuget/packages/automapper/13.0.1/automapper.13.0.1.nupkg.sha512",
     "/Users/mateicoman/.nuget/packages/awssdk.core/3.7.100.14/awssdk.core.3.7.100.14.nupkg.sha512",
     "/Users/mateicoman/.nuget/packages/awssdk.securitytoken/3.7.100.14/awssdk.securitytoken.3.7.100.14.nupkg.sha512",
     "/Users/mateicoman/.nuget/packages/dnsclient/1.6.1/dnsclient.1.6.1.nupkg.sha512",

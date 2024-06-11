@@ -2,6 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using MongoDB.Driver;
 using ProductMicroservice.Data;
 using ProductMicroservice.Interfaces;
+using ProductMicroservice.Interfaces.Repositories;
+using ProductMicroservice.Repositories;
 using ProductMicroservice.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,7 +12,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddDbContext<ProductContext>();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 // Add services to the container.
 builder.Services.AddCors(c =>

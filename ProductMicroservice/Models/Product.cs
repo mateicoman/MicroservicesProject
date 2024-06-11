@@ -4,9 +4,8 @@ namespace ProductMicroservice.Models;
 
 public class Product
 {
-    [BsonId]
-    [BsonRepresentation(BsonType.ObjectId)]
-    public string? Id { get; set; } = string.Empty;
+    [BsonId, BsonGuidRepresentation(GuidRepresentation.Standard)]
+    public Guid Id { get; set; }
     [BsonElement("name")]
     public string Name { get; set; } = string.Empty;
     [BsonElement("description")]
