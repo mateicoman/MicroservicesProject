@@ -1800,11 +1800,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/mateicoman/Repos/MicroserviceProject/UserMicroservice/UserMicroservice.csproj",
+      "projectUniqueName": "/Users/mateicoman/Repos/products-service/UserMicroservice/UserMicroservice.csproj",
       "projectName": "UserMicroservice",
-      "projectPath": "/Users/mateicoman/Repos/MicroserviceProject/UserMicroservice/UserMicroservice.csproj",
+      "projectPath": "/Users/mateicoman/Repos/products-service/UserMicroservice/UserMicroservice.csproj",
       "packagesPath": "/Users/mateicoman/.nuget/packages/",
-      "outputPath": "/Users/mateicoman/Repos/MicroserviceProject/UserMicroservice/obj/",
+      "outputPath": "/Users/mateicoman/Repos/products-service/UserMicroservice/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/mateicoman/.nuget/NuGet/NuGet.Config"
@@ -1819,8 +1819,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/mateicoman/Repos/MicroserviceProject/ProductMicroservice/ProductMicroservice.csproj": {
-              "projectPath": "/Users/mateicoman/Repos/MicroserviceProject/ProductMicroservice/ProductMicroservice.csproj"
+            "/Users/mateicoman/Repos/products-service/ProductMicroservice/ProductMicroservice.csproj": {
+              "projectPath": "/Users/mateicoman/Repos/products-service/ProductMicroservice/ProductMicroservice.csproj"
             }
           }
         }
@@ -1829,11 +1829,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
