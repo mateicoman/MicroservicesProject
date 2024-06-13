@@ -11,7 +11,9 @@ public class ProductProfile: Profile
 		CreateMap<ProductPostDto, Product>()
 			.ForMember(dest => dest.Id, opt => opt.MapFrom(src => Guid.NewGuid()));
 
-		CreateMap<ProductPutDto, Product>();	
-	}
+		CreateMap<ProductPutDto, Product>();
+
+        CreateMap<Product, ProductDto>();
+    }
 }
 

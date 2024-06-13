@@ -18,60 +18,64 @@ public class ProductService: IProductService
         _mapper = mapper;
     }
 
-    public async Task<IEnumerable<Product>> FindAsync()
+    public async Task<IEnumerable<ProductDto>> FindAsync()
     {
-        return await _productRepository.FindAsync();
+        return _mapper.Map<IEnumerable<ProductDto>>(await _productRepository.FindAsync());
     }
 
-    public async Task<Product?> GetAsync(Guid id)
+    public async Task<ProductDto?> GetAsync(Guid id)
     {
-        var result = await _productRepository.GetAsync(id);
-        return result;
+        var result = await _productRepository.GetAsync(id)!;
+        if (result is null)
+        {
+            return null;
+        }
+        return _mapper.Map<ProductDto>(result);
     }
 
-    public async Task<Product?> SaveAsync(ProductPostDto productPostDto)
+    public async Task<ProductDto?> SaveAsync(ProductPostDto productPostDto)
     {
-        if (await GetExistingProductWithSameName(null, productPostDto.Name) is not null)
+        if (await AlreadyExistsProductWithSameName(null, productPostDto.Name))
         {
             return null;
         }
         var product = _mapper.Map<Product>(productPostDto);
         await _productRepository.SaveAsync(product);
-        return await _productRepository.GetAsync(product.Id);
+        return _mapper.Map<ProductDto>(await _productRepository.GetAsync(product.Id)!);
     }
 
-    private async Task<Product?> GetExistingProductWithSameName(Guid? productId, string name)
+    private async Task<bool> AlreadyExistsProductWithSameName(Guid? productId, string name)
     {
         var specification = new GetExistingProductByIdAndName(productId, name);
-        var existing =  await _productRepository.GetAsync(specification);
+        var existing =  await _productRepository.GetAsync(specification)!;
         if(existing is null)
         {
-            return null;
+            return false;
         }
-        return existing;
+        return true;
     }
 
-    public async Task<Product?> UpdateAsync(Guid productId, ProductPutDto productPutDto)
+    public async Task<ProductDto?> UpdateAsync(Guid productId, ProductPutDto productPutDto)
     {
-        var product = await _productRepository.GetAsync(productId);
+        var product = await _productRepository.GetAsync(productId)!;
 
         if(product is null)
         {
             return null;
         }
 
-        if (await GetExistingProductWithSameName(productId, productPutDto.Name) is not null)
+        if (await AlreadyExistsProductWithSameName(productId, productPutDto.Name))
         {
             return null;
         }
 
         await _productRepository.UpdateAsync(_mapper.Map(productPutDto, product));
-        return await _productRepository.GetAsync(productId);
+        return _mapper.Map<ProductDto>(await _productRepository.GetAsync(productId)!);
     }
 
     public async Task<bool> DeleteAsync(Guid id)
     {
-        var product = await _productRepository.GetAsync(id);
+        var product = await _productRepository.GetAsync(id)!;
 
         if(product is null)
         {

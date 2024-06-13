@@ -2,13 +2,12 @@
 using ProductMicroservice.Interfaces.Repositories;
 using ProductMicroservice.Domain.Entities;
 
-namespace ProductMicroservice.Repositories
+namespace ProductMicroservice.Repositories;
+
+public class ProductRepository : Repository<Product>, IProductRepository
 {
-    public class ProductRepository : Repository<Product>, IProductRepository
+    public ProductRepository(ProductContext context, IMapper mapper) : base(context, mapper)
     {
-        public ProductRepository(ProductContext context, IMapper mapper) : base(context, mapper)
-        {
-        }
     }
 }
 

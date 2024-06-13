@@ -7,9 +7,9 @@ namespace ProductMicroservice.Interfaces;
 
 public interface IProductService
 {
-    Task<IEnumerable<Product>> FindAsync();
-    Task<Product> GetAsync(Guid id);
-    Task<Product> SaveAsync(ProductPostDto productPostDto);
-    Task<Product> UpdateAsync(Guid id, ProductPutDto productPutDto);
+    Task<IEnumerable<ProductDto>> FindAsync();
+    Task<ProductDto?> GetAsync(Guid id);
+    Task<ProductDto?> SaveAsync(ProductPostDto productPostDto);
+    Task<ProductDto?> UpdateAsync(Guid id, ProductPutDto productPutDto);
     Task<bool> DeleteAsync(Guid id);
 }
