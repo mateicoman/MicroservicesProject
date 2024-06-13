@@ -1,4 +1,7 @@
-using ProductMicroservice.Models;
+
+
+using ProductMicroservice.Domain.DTO;
+using ProductMicroservice.Domain.Entities;
 
 namespace ProductMicroservice.Interfaces;
 

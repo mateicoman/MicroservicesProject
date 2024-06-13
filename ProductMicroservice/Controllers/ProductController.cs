@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using ProductMicroservice.Domain.DTO;
 using ProductMicroservice.Interfaces;
-using ProductMicroservice.Models;
 
 namespace ProductMicroservice.Controllers
 {

@@ -20,10 +20,20 @@
 
     <ItemGroup>
       <None Remove="Repositories\" />
-      <None Remove="Mapper\" />
+      <None Remove="Domain\" />
+      <None Remove="Domain.DTO\" />
+      <None Remove="Domain\Entitites\" />
+      <None Remove="Domain\Mapper\" />
+      <None Remove="Domain\Interfaces\" />
+      <None Remove="Domain\Specifications\" />
     </ItemGroup>
     <ItemGroup>
       <Folder Include="Repositories\" />
-      <Folder Include="Mapper\" />
+      <Folder Include="Domain\" />
+      <Folder Include="Domain.DTO\" />
+      <Folder Include="Domain\Entitites\" />
+      <Folder Include="Domain\Mapper\" />
+      <Folder Include="Domain\Interfaces\" />
+      <Folder Include="Domain\Specifications\" />
     </ItemGroup>
 </Project>

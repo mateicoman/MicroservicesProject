@@ -1,9 +1,6 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
-using System.Linq.Expressions;
-using UserManagement.Domain.Interfaces.Specifications;
+﻿using System.Linq.Expressions;
 
-namespace UserManagement.Domain.Interfaces.Repositories
+namespace ProductMicroservice.Domain.Interfaces.Repositories
 {
     public interface IRepository<T>
     {

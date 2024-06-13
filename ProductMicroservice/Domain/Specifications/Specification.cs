@@ -1,8 +1,7 @@
-﻿using System;
-using System.Linq.Expressions;
-using UserManagement.Domain.Interfaces.Specifications;
+﻿using System.Linq.Expressions;
+using ProductMicroservice.Domain.Interfaces;
 
-namespace UserManagement.Domain.Specifications
+namespace ProductMicroservice.Domain.Specifications
 {
     public abstract class Specification<T> : ISpecification<T>
     {

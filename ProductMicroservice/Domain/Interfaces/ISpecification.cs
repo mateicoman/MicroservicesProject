@@ -1,7 +1,6 @@
-﻿using System;
-using System.Linq.Expressions;
+﻿using System.Linq.Expressions;
 
-namespace UserManagement.Domain.Interfaces.Specifications
+namespace ProductMicroservice.Domain.Interfaces
 {
     public interface ISpecification<T>
     {

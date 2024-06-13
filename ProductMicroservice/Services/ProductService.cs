@@ -1,11 +1,9 @@
 using AutoMapper;
-using Microsoft.AspNetCore.Http.HttpResults;
-using MongoDB.Bson;
-using ProductMicroservice.Data;
+using ProductMicroservice.Domain.DTO;
+using ProductMicroservice.Domain.Entities;
 using ProductMicroservice.Interfaces;
 using ProductMicroservice.Interfaces.Repositories;
-using ProductMicroservice.Models;
-using UserManagement.Domain.Specifications;
+using ProductMicroservice.Domain.Specifications;
 
 namespace ProductMicroservice.Services;
 

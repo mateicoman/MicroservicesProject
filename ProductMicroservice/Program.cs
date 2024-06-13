@@ -1,6 +1,3 @@
-using Microsoft.EntityFrameworkCore;
-using MongoDB.Driver;
-using ProductMicroservice.Data;
 using ProductMicroservice.Interfaces;
 using ProductMicroservice.Interfaces.Repositories;
 using ProductMicroservice.Repositories;

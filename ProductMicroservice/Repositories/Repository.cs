@@ -1,8 +1,8 @@
 ﻿using System.Linq.Expressions;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using UserManagement.Domain.Interfaces.Repositories;
-using UserManagement.Domain.Interfaces.Specifications;
+using ProductMicroservice.Domain.Interfaces;
+using ProductMicroservice.Domain.Interfaces.Repositories;
 
 namespace ProductMicroservice.Repositories
 {

@@ -1,9 +1,6 @@
-﻿using System;
-using AutoMapper;
-using Microsoft.EntityFrameworkCore;
-using ProductMicroservice.Data;
+﻿using AutoMapper;
 using ProductMicroservice.Interfaces.Repositories;
-using ProductMicroservice.Models;
+using ProductMicroservice.Domain.Entities;
 
 namespace ProductMicroservice.Repositories
 {

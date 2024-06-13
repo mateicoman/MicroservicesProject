@@ -1,11 +1,10 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-namespace ProductMicroservice.Models;
 
-public class Product
-{
-    [BsonId, BsonGuidRepresentation(GuidRepresentation.Standard)]
-    public Guid Id { get; set; }
+namespace ProductMicroservice.Domain.DTO;
+
+	public class ProductPutDto
+	{
     [BsonElement("name")]
     public string Name { get; set; } = string.Empty;
     [BsonElement("description")]
@@ -17,3 +16,4 @@ public class Product
     [BsonElement("available")]
     public bool IsAvailable { get; set; }
 }
+

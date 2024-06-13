@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using ProductMicroservice.Models;
-using MongoDB.Driver;
+using ProductMicroservice.Domain.Entities;
 using MongoDB.EntityFrameworkCore.Extensions;
-namespace ProductMicroservice.Data;
+
+namespace ProductMicroservice.Repositories;
 
 public class ProductContext: DbContext
 {

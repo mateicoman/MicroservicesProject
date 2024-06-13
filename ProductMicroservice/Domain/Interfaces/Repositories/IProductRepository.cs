@@ -1,6 +1,5 @@
-﻿using System;
-using ProductMicroservice.Models;
-using UserManagement.Domain.Interfaces.Repositories;
+﻿using ProductMicroservice.Domain.Entities;
+using ProductMicroservice.Domain.Interfaces.Repositories;
 
 namespace ProductMicroservice.Interfaces.Repositories
 {
